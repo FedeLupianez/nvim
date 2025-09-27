@@ -4,12 +4,12 @@ return {
 		lazy = false,
 	},
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		lazy = false,
 	},
 
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		lazy = false,
 		dependencies = { "saghen/blink.cmp" },
 		opts = {

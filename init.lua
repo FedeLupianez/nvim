@@ -20,3 +20,4 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 vim.opt.spell = true
 vim.opt.spelllang = { "en", "es" }
+vim.treesitter.language.register("json", "jsonc")

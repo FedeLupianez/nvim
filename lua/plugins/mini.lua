@@ -1,14 +1,14 @@
 return {
 	{
-		"echasnovski/mini.animate",
+		"nvim-mini/mini.animate",
 		enabled = false,
 	},
 	{
-		"echasnovski/mini.nvim",
+		"nvim-mini/mini.nvim",
 		enabled = false,
 	},
 	{
-		"echasnovski/mini.splitjoin",
+		"nvim-mini/mini.splitjoin",
 		version = false,
 		config = function()
 			require("mini.splitjoin").setup({})
