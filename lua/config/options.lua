@@ -5,8 +5,5 @@
 vim.o.shell = "zsh"
 
 local vimO = vim.opt
-
-vimO.tabstop = 4
-vimO.shiftwidth = 4
 vimO.expandtab = true
-vimO.softtabstop = 4
+vimO.clipboard = "unnamedplus"
