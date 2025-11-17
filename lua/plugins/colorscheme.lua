@@ -118,17 +118,17 @@ return {
 			})
 			vim.cmd("TransparentEnable") -- execute the command to enable transparency
 		end,
+		enabled = true,
 	},
 
 	{
 		"rebelot/kanagawa.nvim",
-		priority = 1000,
 		config = function()
 			-- Default options:
 			require("kanagawa").setup({
-				compile = false, -- enable compiling the colorscheme
+				compile = true, -- enable compiling the colorscheme
 				undercurl = false, -- enable undercurls
-				commentStyle = {},
+				commentStyle = { italic = false },
 				functionStyle = { bold = false },
 				keywordStyle = { italic = false },
 				statementStyle = { bold = false },

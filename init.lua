@@ -7,7 +7,6 @@ vim.o.winborder = "rounded"
 vim.o.wrap = false
 vim.o.swapfile = false
 
-vim.opt.ttyfast = true -- Asume una terminal rapida
 vim.opt.updatetime = 300 -- Reduce el tiempo de espera para eventos
 vim.diagnostic.config({ virtual_text = true })
 
