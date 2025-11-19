@@ -14,4 +14,13 @@ return {
 			require("mini.splitjoin").setup({})
 		end,
 	},
+	{
+		"nvim-mini/mini.pairs",
+		enabled = false,
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
 }
