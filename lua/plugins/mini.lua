@@ -23,4 +23,5 @@ return {
 		event = "InsertEnter",
 		opts = {},
 	},
+	{ "nvim-mini/mini.files", version = false, lazy = false, enabled = false },
 }

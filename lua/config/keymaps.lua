@@ -20,6 +20,7 @@ keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 keymap.set("n", "4", "$")
 
 keymap.set("n", "<leader>ff", ":lua Snacks.dashboard.pick('files')<CR>", { desc = "Find files" })
+-- keymap.set("n", "-", ":lua require('mini.files').open()<CR>", { desc = "Find files" }, "n")
 keymap.set("n", "<leader>fg", ":lua Snacks.dashboard.pick('grep')<CR>", { desc = "Grep" })
 
 -- Ir a la definition de una funcion o algo

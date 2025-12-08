@@ -12,5 +12,5 @@ return {
 			menu_key = "<leader>p",
 		})
 	end,
-	enabled = true,
+	enabled = false,
 }

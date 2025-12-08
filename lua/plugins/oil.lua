@@ -23,7 +23,7 @@ return {
 			["g."] = "actions.toggle_hidden", -- Toggle hidden files
 			["g\\"] = "actions.toggle_trash", -- Toggle trash
 		},
-		use_default_keymaps = true, -- Do not use default key mappings
+		use_default_keymaps = false, -- Do not use default key mappings
 	},
 
 	-- Optional dependencies

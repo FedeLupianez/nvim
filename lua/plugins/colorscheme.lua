@@ -3,7 +3,6 @@ return {
 		"xiyaowong/transparent.nvim",
 		config = function()
 			require("transparent").setup({
-				enable = true, -- boolean: enable transparent
 				extra_groups = { -- table/string: additional groups that should be cleared
 					"Normal",
 					"NormalNC",
@@ -32,7 +31,7 @@ return {
 			})
 			vim.cmd("TransparentEnable") -- execute the command to enable transparency
 		end,
-		enabled = false,
+		enabled = true,
 	},
 
 	{
@@ -47,9 +46,35 @@ return {
 				keywordStyle = { italic = false },
 				statementStyle = { bold = false },
 				typeStyle = {},
-				transparent = false, -- do not set background color
+				transparent = true, -- do not set background color
 				dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-				terminalColors = false, -- define vim.g.terminal_color_{0,17}
+				terminalColors = true, -- define vim.g.terminal_color_{0,17}
+				colors = { -- add/modify theme and palette colors
+					palette = {},
+					theme = {},
+					wave = {},
+					lotus = {},
+					dragon = {},
+					all = {
+						ui = {
+							bg_gutter = "none", -- set bg color for normal background
+							bg_sidebar = "none", -- set bg color for sidebar like nvim-tree
+							bg_float = "none", -- set bg color for floating windows
+						},
+					},
+				},
+				overrides = function(colors) -- add/modify highlights
+					return {
+						LineNr = { bg = "none" },
+						NormalFloat = { bg = "none" },
+						FloatBorder = { bg = "none" },
+						FloatTitle = { bg = "none" },
+						TelescopeNormal = { bg = "none" },
+						TelescopeBorder = { bg = "none" },
+						LspInfoBorder = { bg = "none" },
+					}
+				end,
+				theme = "wave", -- Load "wave" theme
 			})
 		end,
 	},
@@ -57,20 +82,10 @@ return {
 	{
 		"catppuccin/nvim",
 		enabled = false,
-	},
-	-- example lazy.nvim install setup
-	{
-		"slugbyte/lackluster.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			local lackluster = require("lackluster")
-			local color = lackluster.color
-			lackluster.setup({
-				tweak_syntax = {
-					string = color.yellow,
-				},
-			})
-		end,
+		opts = {
+			flavour = "mocha", -- latte, frappe, macchiato, mocha
+			transparent_background = true, -- disables setting the background color.
+			term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
+		},
 	},
 }
