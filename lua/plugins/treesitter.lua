@@ -1,6 +1,8 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		event = "VeryLazy",
+		lazy = true,
 		opts = {
 			ensure_installed = { "css", "svelte", "cpp", "python", "typescript", "lua" },
 			highlight = {

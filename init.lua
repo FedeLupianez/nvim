@@ -8,6 +8,8 @@ vim.o.winborder = "rounded"
 vim.o.wrap = false
 vim.o.swapfile = false
 vim.opt.cursorline = false
+vim.opt.loadplugins = true
+vim.opt.shadafile = "NONE"
 vim.loader.enable(true)
 
 vim.opt.updatetime = 300 -- Reduce el tiempo de espera para eventos

@@ -1,11 +1,9 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-		-- La configuración de este plugin se ha movido a lua/plugins/lsp.lua
 	},
 	{
 		"mason-org/mason.nvim",
-		-- Mason es una dependencia y se carga automáticamente.
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
@@ -22,7 +20,5 @@ return {
 				"ruff",
 			},
 		},
-		-- La función `config` ha sido eliminada para evitar conflictos.
-		-- La lógica ahora está en lua/plugins/lsp.lua
 	},
 }

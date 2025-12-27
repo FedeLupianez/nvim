@@ -25,3 +25,8 @@ keymap.set("n", "<leader>fg", ":lua Snacks.dashboard.pick('grep')<CR>", { desc =
 
 -- Ir a la definition de una funcion o algo
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>dn", ":DapNew<CR>", { desc = "Dap New" })
+vim.keymap.set("n", "<leader>dt", ":DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
+vim.keymap.set("n", "<leader>dc", ":DapContinue<CR>", { desc = "Continue" })
+vim.keymap.set("n", "<leader>dq", ":DapStepOut<CR>", { desc = "Step Out" })
