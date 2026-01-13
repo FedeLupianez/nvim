@@ -7,5 +7,5 @@ return {
 		trailing_stiffness_insert_mode = 0.4, -- 0.4      [0, 1]
 		distance_stop_animating = 0.1, -- 0.1      > 0
 	},
-	enabled = true,
+	enabled = false,
 }

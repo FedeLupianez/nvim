@@ -1,6 +1,7 @@
 return {
 	"mfussenegger/nvim-dap",
-	event = "VeryLazy",
+	cmd = { "DapLaunch", "DapContinue", "DapToggleBreakpoint" },
+	lazy = true,
 	dependencies = {
 		"rcarriga/nvim-dap-ui",
 		"nvim-neotest/nvim-nio",
@@ -57,5 +58,4 @@ return {
 		dap.configurations.c = dap.configurations.cpp
 		dap.configurations.rust = dap.configurations.cpp
 	end,
-	event = "VimEnter",
 }

@@ -7,12 +7,14 @@ return {
 			enabled = false,
 		},
 		animations = {
-			enabled = false,
+			enabled = true,
 		},
 		picker = {
+			event = "VimEnter",
 			enabled = true,
 		},
 		image = {
+			event = "VeryLazy",
 			enabled = true,
 		},
 		dashboard = {
