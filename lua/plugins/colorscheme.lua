@@ -28,22 +28,21 @@ return {
 					"SignColumn",
 					"CursorLineNr",
 					"EndOfBuffer",
-					"TelescopeNormal",
-					"TelescopeBorder",
-					"TelescopePromptNormal",
-					"TelescopePromptBorder",
-					"TelescopePromptTitle",
-					"TelescopeResultsNormal",
-					"TelescopeResultsBorder",
-					"TelescopeResultsTitle",
-					"TelescopePreviewNormal",
-					"TelescopePreviewBorder",
-					"TelescopePreviewTitle",
-					"TelescopePromptCounter",
-					"TelescopePromptPrefix",
-					"TelescopeSelectionCaret",
-					"TelescopeSelection",
-					"TelescopeMultiSelection",
+					"SnacksWinSeparator",
+					"SnacksPickerListBorder",
+					"SnacksPickerFooter",
+					"SnacksPickerListFooter",
+					"SnacksPickerTitle",
+					"SnacksPickerListTitle",
+					"SnacksPicker",
+					"SnacksPickerList",
+					"SnacksPickerInputBorder",
+					"SnacksPickerInputFooter",
+					"SnacksPickerInputTitle",
+					"SnacksPickerCursorLine",
+					"SnacksPickerInputCursorLine",
+					"SnacksPickerInput",
+					"SnacksPickerPreviewBorder",
 				},
 				exclude = {}, -- table: groups you don't want to clear
 			})
@@ -87,8 +86,6 @@ return {
 						NormalFloat = { bg = "none" },
 						FloatBorder = { bg = "none" },
 						FloatTitle = { bg = "none" },
-						TelescopeNormal = { bg = "none" },
-						TelescopeBorder = { bg = "none" },
 						LspInfoBorder = { bg = "none" },
 					}
 				end,
@@ -100,10 +97,5 @@ return {
 	{
 		"catppuccin/nvim",
 		enabled = false,
-		opts = {
-			flavour = "mocha", -- latte, frappe, macchiato, mocha
-			transparent_background = true, -- disables setting the background color.
-			term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
-		},
 	},
 }
