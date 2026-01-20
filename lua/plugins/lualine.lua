@@ -33,7 +33,7 @@ local bubbles_theme = {
 
 return {
 	"nvim-lualine/lualine.nvim",
-	event = "VeryLazy",
+	event = "UIEnter",
 	opts = {
 		options = {
 			theme = bubbles_theme,

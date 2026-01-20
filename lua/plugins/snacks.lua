@@ -70,6 +70,7 @@ return {
             { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
 			},
+			enabled = false,
 		},
 	},
 	enabled = true,

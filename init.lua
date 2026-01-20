@@ -12,7 +12,7 @@ vim.opt.loadplugins = true
 vim.opt.shadafile = "NONE"
 vim.loader.enable(true)
 
-vim.opt.updatetime = 300 -- Reduce el tiempo de espera para eventos
+vim.opt.updatetime = 150 -- Reduce el tiempo de espera para eventos
 vim.diagnostic.config({ virtual_text = true })
 
 vim.o.shell = "zsh"
@@ -32,17 +32,17 @@ vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#808081" })
 
 vim.api.nvim_set_hl(0, "BlinkCmpItemAbbr", { fg = "#ffffff" })
-vim.api.nvim_set_hl(0, "BlinkCmpDocCursorLine", { fg = "#808081" })
-vim.api.nvim_set_hl(0, "BlinkCmpScrollBarGutter", { fg = "#808081" })
-vim.api.nvim_set_hl(0, "BlinkCmpScrollBarThumb", { fg = "#808081" })
-vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#808081" })
+vim.api.nvim_set_hl(0, "BlinkCmpDocCursorLine", { fg = "#3a3a3a" })
+vim.api.nvim_set_hl(0, "BlinkCmpScrollBarGutter", { fg = "#3a3a3a" })
+vim.api.nvim_set_hl(0, "BlinkCmpScrollBarThumb", { fg = "#3a3a3a" })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", { bg = "#3a3a3a" })
 vim.api.nvim_set_hl(0, "BlinkCmpLabelMatch", { fg = "#ffffff" })
 
 -- Snacks picker colors
 -- vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { bg = "#808081" })
-vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = "NONE", fg = "#d5d0c9" })
-vim.api.nvim_set_hl(0, "SnacksTitle", { bg = "NONE", fg = "#d5d0c9" })
-vim.api.nvim_set_hl(0, "SnacksInputTitle", { bg = "NONE", fg = "#d5d0c9" })
-vim.api.nvim_set_hl(0, "SnacksPickerPreviewTitle", { bg = "NONE", fg = "#d5d0c9" })
+vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = "NONE", fg = "#b0b0b0" })
+vim.api.nvim_set_hl(0, "SnacksTitle", { bg = "NONE", fg = "#b0b0b0" })
+vim.api.nvim_set_hl(0, "SnacksInputTitle", { bg = "NONE", fg = "#b0b0b0" })
+vim.api.nvim_set_hl(0, "SnacksPickerPreviewTitle", { bg = "NONE", fg = "#b0b0b0" })
 
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none", fg = "#808081" })

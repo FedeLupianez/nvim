@@ -1,7 +1,6 @@
 return {
 	{
 		"xiyaowong/transparent.nvim",
-		event = "VeryLazy",
 		lazy = false,
 		config = function()
 			require("transparent").setup({
@@ -46,7 +45,6 @@ return {
 				},
 				exclude = {}, -- table: groups you don't want to clear
 			})
-			vim.cmd("TransparentEnable") -- execute the command to enable transparency
 		end,
 		enabled = true,
 	},
@@ -97,5 +95,10 @@ return {
 	{
 		"catppuccin/nvim",
 		enabled = false,
+		opts = {
+			flavour = "mocha", -- latte, frappe, macchiato, mocha
+			transparent_background = true, -- disables setting the background color.
+			term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
+		},
 	},
 }
