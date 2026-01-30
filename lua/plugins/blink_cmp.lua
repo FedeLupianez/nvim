@@ -60,6 +60,15 @@ return {
 			snippets = { preset = "luasnip" },
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer" },
+				per_filetype = {
+					sql = { "snippets", "dadbod", "buffer" },
+					mysql = { "snippets", "dadbod", "buffer" },
+					dbui_query = { "snippets", "dadbod", "buffer" },
+				},
+				-- add vim-dadbod-completion to your completion providers
+				providers = {
+					dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+				},
 			},
 
 			keymap = {

@@ -23,9 +23,13 @@ keymap.set("n", "<leader>ff", ":lua Snacks.dashboard.pick('files')<CR>", { desc 
 keymap.set("n", "<leader>fg", ":lua Snacks.dashboard.pick('grep')<CR>", { desc = "Grep" })
 
 -- Ir a la definition de una funcion o algo
-vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
+keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
 
-vim.keymap.set("n", "<leader>dn", ":DapNew<CR>", { desc = "Dap New" })
-vim.keymap.set("n", "<leader>dt", ":DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
-vim.keymap.set("n", "<leader>dc", ":DapContinue<CR>", { desc = "Continue" })
-vim.keymap.set("n", "<leader>dq", ":DapStepOut<CR>", { desc = "Step Out" })
+-- Debugging
+keymap.set("n", "<leader>dn", ":DapNew<CR>", { desc = "Dap New" })
+keymap.set("n", "<leader>dt", ":DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
+keymap.set("n", "<leader>dc", ":DapContinue<CR>", { desc = "Continue" })
+keymap.set("n", "<leader>dq", ":DapStepOut<CR>", { desc = "Step Out" })
+
+-- Dbui
+keymap.set("n", "<leader>Dd", ":DBUIToggle<CR>", { desc = "Dbui" })

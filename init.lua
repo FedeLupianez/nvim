@@ -9,7 +9,8 @@ vim.o.wrap = false
 vim.o.swapfile = false
 vim.opt.cursorline = false
 vim.opt.loadplugins = true
-vim.opt.shadafile = "NONE"
+vim.opt.history = 100
+vim.opt.undolevels = 100
 vim.loader.enable(true)
 
 vim.opt.updatetime = 150 -- Reduce el tiempo de espera para eventos
@@ -25,6 +26,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 vim.opt.spell = true
 vim.opt.spelllang = { "en", "es" }
+
 vim.treesitter.language.register("json", "jsonc")
 
 -- Blink.cmp colors
@@ -46,3 +48,9 @@ vim.api.nvim_set_hl(0, "SnacksInputTitle", { bg = "NONE", fg = "#b0b0b0" })
 vim.api.nvim_set_hl(0, "SnacksPickerPreviewTitle", { bg = "NONE", fg = "#b0b0b0" })
 
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none", fg = "#808081" })
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "dbui_query" },
+	callback = function()
+		vim.bo.filetype = "sql"
+	end,
+})
