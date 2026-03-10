@@ -1,5 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+vim.g.lazyvim_picker = "snacks"
 vim.opt.tabstop = 4 -- Número de espacios que ocupa el tab
 vim.opt.shiftwidth = 4 -- Tamaño de indentación
 vim.opt.encoding = "utf-8"
@@ -11,7 +12,7 @@ vim.opt.cursorline = false
 vim.opt.loadplugins = true
 vim.opt.history = 100
 vim.opt.undolevels = 100
-vim.loader.enable(true)
+vim.loader.enable()
 
 vim.opt.updatetime = 150 -- Reduce el tiempo de espera para eventos
 vim.diagnostic.config({ virtual_text = true })
@@ -30,8 +31,8 @@ vim.opt.spelllang = { "en", "es" }
 vim.treesitter.language.register("json", "jsonc")
 
 -- Blink.cmp colors
-vim.api.nvim_set_hl(0, "BlinkCmpMenu", { bg = "NONE" })
-vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#808081" })
+vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#808081", bg = "NONE" })
 
 vim.api.nvim_set_hl(0, "BlinkCmpItemAbbr", { fg = "#ffffff" })
 vim.api.nvim_set_hl(0, "BlinkCmpDocCursorLine", { fg = "#3a3a3a" })
@@ -43,9 +44,17 @@ vim.api.nvim_set_hl(0, "BlinkCmpLabelMatch", { fg = "#ffffff" })
 -- Snacks picker colors
 -- vim.api.nvim_set_hl(0, "SnacksPickerListCursorLine", { bg = "#808081" })
 vim.api.nvim_set_hl(0, "SnacksPickerBorder", { bg = "NONE", fg = "#b0b0b0" })
+vim.api.nvim_set_hl(0, "SnacksPickerListBorder", { bg = "NONE", fg = "#b0b0b0" })
+vim.api.nvim_set_hl(0, "SnacksPickerInputBorder", { bg = "NONE", fg = "#b0b0b0" })
 vim.api.nvim_set_hl(0, "SnacksTitle", { bg = "NONE", fg = "#b0b0b0" })
 vim.api.nvim_set_hl(0, "SnacksInputTitle", { bg = "NONE", fg = "#b0b0b0" })
 vim.api.nvim_set_hl(0, "SnacksPickerPreviewTitle", { bg = "NONE", fg = "#b0b0b0" })
+
+-- keyword color
+vim.api.nvim_set_hl(0, "Keyword", { bg = "NONE", fg = "#957fb8" })
+vim.api.nvim_set_hl(0, "Conditional", { bg = "NONE", fg = "#957fb8" })
+vim.api.nvim_set_hl(0, "@keyword.return", { bg = "NONE", fg = "#957fb8" })
+vim.api.nvim_set_hl(0, "Constant", { bg = "NONE", fg = "#e46876" })
 
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none", fg = "#808081" })
 vim.api.nvim_create_autocmd("FileType", {

@@ -101,4 +101,32 @@ return {
 			term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
 		},
 	},
+	{
+		"mslvx/obscure.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = true,
+			terminalColors = true,
+			styles = {
+				keywords = { italic = false },
+				functions = { bold = false },
+				variables = { italic = false },
+				numbers = { italic = false },
+				booleans = { italic = false },
+				strings = { italic = false },
+				types = { italic = false },
+				comments = { italic = false },
+			},
+			overrides = function(colors) -- add/modify highlights
+				return {
+					LineNr = { bg = "none" },
+					NormalFloat = { bg = "none" },
+					FloatBorder = { bg = "none" },
+					FloatTitle = { bg = "none" },
+					LspInfoBorder = { bg = "none" },
+				}
+			end,
+		},
+	},
 }

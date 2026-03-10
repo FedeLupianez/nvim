@@ -19,12 +19,6 @@ keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil" })
 
 keymap.set("n", "4", "$")
 
-keymap.set("n", "<leader>ff", ":lua Snacks.dashboard.pick('files')<CR>", { desc = "Find files" })
-keymap.set("n", "<leader>fg", ":lua Snacks.dashboard.pick('grep')<CR>", { desc = "Grep" })
-
--- Ir a la definition de una funcion o algo
-keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Go to definition" })
-
 -- Debugging
 keymap.set("n", "<leader>dn", ":DapNew<CR>", { desc = "Dap New" })
 keymap.set("n", "<leader>dt", ":DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })

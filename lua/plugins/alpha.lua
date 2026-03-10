@@ -15,8 +15,33 @@ return {
 		----------------------------------------------------------------------
 		vim.api.nvim_set_hl(0, "AlphaGrayDark", { fg = "#3a3a3a" }) -- gris oscuro
 		vim.api.nvim_set_hl(0, "AlphaGrayLight", { fg = "#b0b0b0" }) -- gris claro
-		vim.api.nvim_set_hl(0, "AlphaButtons", { fg = "#b0b0b0" })
-		vim.api.nvim_set_hl(0, "AlphaShortcut", { fg = "#3a3a3a", bold = true })
+		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#b0b0b0" })
+		local function set_colors()
+			vim.api.nvim_set_hl(0, "AlphaShortcut", { fg = "#b0b0b0", bold = true })
+			vim.api.nvim_set_hl(0, "AlphaButtons", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaButton", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaButtonShortcut", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaButtonText", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "DashboardCenter", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "DashboardCenter", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "DashboardIcon", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "DashboardKey", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "DashboardFooter", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "DashboardShortCut", { fg = "#3a3a3a" })
+			vim.api.nvim_set_hl(0, "DashboardCenter", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaButton", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaButtonShortcut", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaButtonText", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaGrayDark", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaFooter", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaDesc", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaShortcut", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaButtons", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "AlphaGrayLight", { fg = "#b0b0b0" })
+			vim.api.nvim_set_hl(0, "DashboardDesc", { fg = "#b0b0b0" })
+		end
 
 		_Gopts = {
 			position = "center",
@@ -77,32 +102,22 @@ return {
 		-- LOGO
 		----------------------------------------------------------------------
 		local logo = [[
-                                     
-                                     
-	    ▄   ▄███▄   ████▄     ▄   ▄█ █▀▄▀█ 
-	     █  █▀   ▀  █   █      █  ██ █ █ █ 
-	 ██   █ ██▄▄    █   █ █     █ ██ █ ▄ █ 
-	 █ █  █ █▄   ▄▀ ▀████  █    █ ▐█ █   █ 
-	 █  █ █ ▀███▀           █  █   ▐    █  
-	 █   ██                  █▐        ▀   
-	                         ▐             
-        ]]
+
+
+	   ▄   ▄███▄   ████▄     ▄   ▄█ █▀▄▀█
+	    █  █▀   ▀  █   █      █  ██ █ █ █
+	██   █ ██▄▄    █   █ █     █ ██ █   █
+	█ █  █ █▄   ▄▀ ▀████  █    █ ▐█ █   █
+	█  █ █ ▀███▀           █  █   ▐    █
+	█   ██                  █▐        ▀
+	                        ▐
+		      ]]
 
 		local header_val = vim.split(logo, "\n")
 
-		-- Todo el logo en gris oscuro
-		local header_hl = {}
-		for i = 1, #header_val do
-			table.insert(header_hl, {
-				{ "AlphaGrayLight", 0, #header_val[i] },
-			})
-		end
-
-		header_hl = utils.charhl_to_bytehl(header_hl, header_val, false)
-
 		dashboard.section.header.val = header_val
 		dashboard.section.header.opts = {
-			hl = header_hl,
+			hl = "AlphaGrayLight",
 			position = "center",
 		}
 
@@ -131,42 +146,78 @@ return {
 		----------------------------------------------------------------------
 		-- BUTTONS
 		----------------------------------------------------------------------
-		dashboard.section.buttons.val = {
-			dashboard.button("u", "󱐥  Update plugins", "<cmd>Lazy update<CR>"),
-			dashboard.button("f", "  Find file", ":lua Snacks.dashboard.pick('files')<CR>"),
-			dashboard.button("g", "󰈞  Find text", ":lua Snacks.dashboard.pick('grep')<CR>"),
-			dashboard.button("q", "  Quit", "<cmd>q<CR>"),
+		local buttons = {
+			type = "group",
+			val = {
+				{
+					type = "button",
+					val = "󱐥  Update plugins",
+					on_press = function()
+						vim.cmd("Lazy update")
+					end,
+					opts = {
+						hl = "AlphaButton",
+						hl_shortcut = "AlphaShortcut",
+						keymap = { "n", "u", "<cmd>Lazy update<CR>", { noremap = true, silent = true } }, -- ¡AÑADIDO!
+						position = "center",
+						shortcut = "u",
+						width = 40,
+						align_shortcut = "right",
+					},
+				},
+				{
+					type = "button",
+					val = "  Find file",
+					on_press = function()
+						vim.cmd("lua Snacks.picker.files()")
+					end,
+					opts = {
+						hl = "AlphaButton",
+						hl_shortcut = "AlphaShortcut",
+						keymap = { "n", "f", ":lua Snacks.picker.files()<CR>", { noremap = true, silent = true } }, -- ¡AÑADIDO!
+						position = "center",
+						shortcut = "f",
+						width = 40,
+						align_shortcut = "right",
+					},
+				},
+				{
+					type = "button",
+					val = "󰈞  Find text",
+					on_press = function()
+						vim.cmd("lua Snacks.picker.grep()")
+					end,
+					opts = {
+						hl = "AlphaButton",
+						hl_shortcut = "AlphaShortcut",
+						keymap = { "n", "g", ":lua Snacks.picker.grep()<CR>", { noremap = true, silent = true } }, -- ¡AÑADIDO!
+						position = "center",
+						shortcut = "g",
+						width = 40,
+						align_shortcut = "right",
+					},
+				},
+				{
+					type = "button",
+					val = "  Quit",
+					on_press = function()
+						vim.cmd("q")
+					end,
+					opts = {
+						hl = "AlphaButton",
+						hl_shortcut = "AlphaShortcut",
+						keymap = { "n", "q", "<cmd>q<CR>", { noremap = true, silent = true } }, -- ¡AÑADIDO!
+						position = "center",
+						shortcut = "q",
+						width = 40,
+						align_shortcut = "right",
+					},
+				},
+			},
+			opts = {
+				position = "center",
+			},
 		}
-
-		dashboard.section.buttons.opts = {
-			hl = "AlphaButtons",
-			position = "center",
-		}
-
-		----------------------------------------------------------------------
-		-- STARTUP STATS
-		----------------------------------------------------------------------
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "LazyVimStarted",
-			once = true,
-			callback = function()
-				local stats = require("lazy").stats()
-				local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
-
-				local line = " Loaded " .. stats.count .. " plugins  in " .. ms .. " ms"
-
-				-- calcular ancho del logo para centrar
-				local logo_width = dashboard.section.header.val[1] and #dashboard.section.header.val[1] or #line
-
-				local padding = math.max(0, math.floor((logo_width - #line) / 2))
-				local centered_line = string.rep(" ", padding) .. line
-
-				table.insert(dashboard.section.footer.val, " ")
-				table.insert(dashboard.section.footer.val, centered_line)
-
-				pcall(vim.cmd.AlphaRedraw)
-			end,
-		})
 
 		----------------------------------------------------------------------
 		-- CLEAN UI WHILE DASHBOARD IS OPEN
@@ -179,6 +230,7 @@ return {
 			callback = function()
 				vim.opt.showcmd = false
 				vim.opt.ruler = false
+				set_colors()
 			end,
 		})
 
@@ -193,14 +245,12 @@ return {
 
 		dashboard.opts.opts.noautocmd = true
 		dashboard.opts.layout = {
+			{ type = "padding", val = 2 },
 			dashboard.section.header,
 			dashboard.section.greeting,
 
 			{ type = "padding", val = 2 },
-			dashboard.section.buttons,
-			{ type = "padding", val = 1 },
-
-			dashboard.section.footer,
+			buttons,
 		}
 		alpha.setup(dashboard.opts)
 	end,

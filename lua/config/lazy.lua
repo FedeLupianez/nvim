@@ -14,7 +14,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 vim.env.TERM = "zsh"
-vim.cmd("hi Normal guibg=NONE")
 
 require("lazy").setup({
 	spec = {
@@ -24,7 +23,7 @@ require("lazy").setup({
 			import = "lazyvim.plugins",
 
 			opts = {
-				colorscheme = "kanagawa",
+				colorscheme = "obscure",
 			},
 		},
 
