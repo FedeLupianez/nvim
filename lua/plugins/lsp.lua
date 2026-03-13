@@ -15,6 +15,9 @@ return {
 				["*"] = {
 					capabilities = require("blink.cmp").get_lsp_capabilities(),
 				},
+				djlsp = {
+					filetypes = { "djl", "python", "htmldjango" },
+				},
 
 				-- CONFIGURACIONES ESPECÍFICAS:
 				vtsls = {
